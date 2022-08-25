@@ -49,6 +49,29 @@ export default function Home() {
         sx={{height:"60px" , width:"100%"}}
       />
     </Box>
+        {/* filter and result section */}
+    <Box sx={{width:"90%" , margin:"auto" ,height:"700px" , display:"flex", justifyContent:"space-between"}}>
+        <Box sx={{width:"30%" , heigth:"100%" , color:"white"}}>
+          <Typography>Filters</Typography>
+        </Box>
+        <Box sx={{width:"80%" , heigth:"100%" , color:"white"}}>
+            <Box sx={{width:"100%" ,heigth:"350px" , backgroundColor:"#505050" , display:"flex" ,justifyContent:"space-between"}}>
+                   <Box sx={{width:"50%" , height:"100%"}}></Box>
+                   <Box sx={{width:"50%" , height:"350px" , padding:"10px"}}>
+                    <Typography variant='h5' sx={{fontWeight:"bold" ,marginBottom:"5px"}}>
+                        WTF:Hybrid Gym
+                    </Typography>
+                    <Typography variant='h5'>* * * * *</Typography>
+                    <Typography variant='p' sx={{fontSize:"19px"}}>Near shastri nagar </Typography>
+                    <Typography> 3.18 mintues away || 2.2km</Typography>
+                     <Box sx={{width:"100%" ,display:"flex" ,justifyContent:"space-between" ,marginTop:"35%" }}>
+                          <Typography>3000 for 3 months</Typography>
+                          <Button sx={{backgroundColor:"#920909" , color:"whitesmoke" ,marginRight:"10px"}}>Book Now</Button>
+                     </Box>
+                   </Box>
+            </Box>
+        </Box>
+    </Box>
     </>
   )
 }
