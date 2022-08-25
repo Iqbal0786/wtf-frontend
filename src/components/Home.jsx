@@ -1,7 +1,8 @@
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material'
+import { AccountCircle } from '@mui/icons-material'
+import { AppBar, Box, Button, InputAdornment, TextField, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import SearchIcon from '@mui/icons-material/Search';
 export default function Home() {
   return (
     <>
@@ -31,6 +32,23 @@ export default function Home() {
             </Box>
         </Toolbar>
     </AppBar>
+    <Box sx={{ marginTop:"10px" , width:"100%" , heigth:"300px" }}>
+      <img src='https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?cs=srgb&dl=pexels-leon-ardho-1552252.jpg&fm=jpg' width={"100%"} height={"100%"}/>
+    </Box>
+    <Box sx={{width:"90%" ,height:"55px",margin:"auto" , marginTop:"30px" ,marginBottom:"100px" ,backgroundColor:"white"}}>
+    <TextField
+        id="input-with-icon-textfield"
+         placeholder='Search gym name here'
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start" sx={{marginLeft:"10px"}}>
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+        sx={{height:"60px" , width:"100%"}}
+      />
+    </Box>
     </>
   )
 }
