@@ -3,6 +3,7 @@ import { AppBar, Box, Button, InputAdornment, TextField, Toolbar, Typography } f
 import React from 'react'
 import { Link } from 'react-router-dom'
 import SearchIcon from '@mui/icons-material/Search';
+import data from "../components/NearestGymData"
 export default function Home() {
   return (
     <>
@@ -54,22 +55,28 @@ export default function Home() {
         <Box sx={{width:"30%" , heigth:"100%" , color:"white"}}>
           <Typography>Filters</Typography>
         </Box>
-        <Box sx={{width:"80%" , heigth:"100%" , color:"white"}}>
-            <Box sx={{width:"100%" ,heigth:"350px" , backgroundColor:"#505050" , display:"flex" ,justifyContent:"space-between"}}>
-                   <Box sx={{width:"50%" , height:"100%"}}></Box>
-                   <Box sx={{width:"50%" , height:"350px" , padding:"10px"}}>
-                    <Typography variant='h5' sx={{fontWeight:"bold" ,marginBottom:"5px"}}>
-                        WTF:Hybrid Gym
-                    </Typography>
-                    <Typography variant='h5'>* * * * *</Typography>
-                    <Typography variant='p' sx={{fontSize:"19px"}}>Near shastri nagar </Typography>
-                    <Typography> 3.18 mintues away || 2.2km</Typography>
-                     <Box sx={{width:"100%" ,display:"flex" ,justifyContent:"space-between" ,marginTop:"35%" }}>
-                          <Typography>3000 for 3 months</Typography>
-                          <Button sx={{backgroundColor:"#920909" , color:"whitesmoke" ,marginRight:"10px"}}>Book Now</Button>
-                     </Box>
-                   </Box>
-            </Box>
+        <Box sx={{width:"80%" , heigth:"100%" , color:"white" ,overflow:"auto"}}>
+           {
+            data.data.map((e)=>{
+                return (
+                    <Box sx={{width:"100%" ,heigth:"350px" , backgroundColor:"#505050" , display:"flex" ,justifyContent:"space-between" ,marginBottom:"20px"}}>
+                    <Box sx={{width:"50%" , height:"100%"}}></Box>
+                    <Box sx={{width:"50%" , height:"350px" , padding:"10px"}}>
+                     <Typography variant='h5' sx={{fontWeight:"bold" ,marginBottom:"5px"}}>
+                         {e.gym_name}
+                     </Typography>
+                     <Typography variant='h5'>* * * * *</Typography>
+                     <Typography variant='p' sx={{fontSize:"19px"}}>{e.address1} , {e.address2} </Typography>
+                     <Typography> {e.duration_text} | {e.distance_text}</Typography>
+                      <Box sx={{width:"100%" ,display:"flex" ,justifyContent:"space-between" ,marginTop:"35%" }}>
+                           <Typography>3000 for 3 months</Typography>
+                           <Button sx={{backgroundColor:"#920909" , color:"whitesmoke" ,marginRight:"10px"}}>Book Now</Button>
+                      </Box>
+                    </Box>
+             </Box>
+                )
+            })
+           }
         </Box>
     </Box>
     </>
